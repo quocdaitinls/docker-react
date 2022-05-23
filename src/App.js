@@ -15,7 +15,7 @@ function App() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          xin chao cac ban!!
+          xin chao cac ban !!
         </a>
       </header>
     </div>
