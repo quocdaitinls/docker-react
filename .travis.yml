@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run loserforever/docker-react npm run test -- --coverage --watchAll=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  name: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-149101267308"
+  bucket_path: "docker-react"
+  on:
+    branch: main
+  access-key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
