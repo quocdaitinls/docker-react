@@ -7,15 +7,14 @@ before_install:
 
 script:
   - docker run loserforever/docker-react npm run test -- --coverage --watchAll=false
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  name: "docker-react"
-  env: "Dockerreact-env-1"
-  bucket_name: "docker-react-bucket-001"
-  bucket_path: "docker-react"
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-1"
+#   name: "docker-react"
+#   env: "Dockerreact-env-1"
+#   bucket_name: "docker-react-bucket-001"
+#   bucket_path: "docker-react"
+#   on:
+#     branch: main
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
