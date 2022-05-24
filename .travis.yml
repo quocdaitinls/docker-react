@@ -8,6 +8,7 @@ before_install:
 script:
   - docker run loserforever/docker-react npm run test -- --coverage --watchAll=false
 
+before_deploy: "echo '${AWS_SECRET_KEY'"
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
