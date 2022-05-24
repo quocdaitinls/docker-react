@@ -8,7 +8,6 @@ before_install:
 script:
   - docker run loserforever/docker-react npm run test -- --coverage --watchAll=false
 
-before_deploy: "echo ''${AWS_ACCESS_KEY} '${AWS_SECRET_KEY}'"
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
@@ -18,7 +17,5 @@ deploy:
   bucket_path: "docker-react"
   on:
     branch: main
-  access-key_id:
-    secure: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_KEY
+  access-key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
